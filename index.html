@@ -89,20 +89,64 @@ transform:translateX(220%);
 
 }
 .brand{
+.brand{
 position:fixed;
 top:20px;
 left:50%;
 transform:translateX(-50%);
-padding:10px 25px;
-background:rgba(255,255,255,.15);
-backdrop-filter:blur(15px);
--webkit-backdrop-filter:blur(15px);
-border:1px solid rgba(255,255,255,.25);
+padding:12px 30px;
 border-radius:50px;
+background:rgba(255,255,255,.12);
+backdrop-filter:blur(20px);
+-webkit-backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.30);
+box-shadow:
+0 10px 30px rgba(0,0,0,.25),
+0 0 25px rgba(255,255,255,.15);
 color:#fff;
-font-size:24px;
-font-weight:bold;
+font-size:26px;
+font-weight:800;
+letter-spacing:1px;
+overflow:hidden;
 z-index:999;
+animation:brandGlow 2s ease-in-out infinite alternate;
+}
+
+.brand::before{
+content:"";
+position:absolute;
+top:0;
+left:-120%;
+width:60%;
+height:100%;
+background:linear-gradient(
+90deg,
+transparent,
+rgba(255,255,255,.8),
+transparent
+);
+transform:skewX(-25deg);
+animation:shine 3s linear infinite;
+}
+
+@keyframes shine{
+100%{
+left:180%;
+}
+}
+
+@keyframes brandGlow{
+0%{
+box-shadow:
+0 10px 30px rgba(0,0,0,.25),
+0 0 15px rgba(255,255,255,.20);
+}
+
+100%{
+box-shadow:
+0 10px 30px rgba(0,0,0,.25),
+0 0 35px rgba(255,255,255,.50);
+}
 }
 .card{
 
