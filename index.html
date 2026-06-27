@@ -464,7 +464,27 @@ finalScore=Math.floor(Math.random()*25)+71;
 animateScore(finalScore);
 
 document.getElementById("bar").style.width=finalScore+"%";
+let bar=document.getElementById("bar");
+let scoreText=document.getElementById("score");
 
+if(finalScore<=55){
+
+bar.style.background="linear-gradient(90deg,#ff0000,#ff4d4d)";
+scoreText.style.color="#ff3b30";
+
+}
+else if(finalScore<=70){
+
+bar.style.background="linear-gradient(90deg,#ff6b00,#ffd60a)";
+scoreText.style.color="#ffb000";
+
+}
+else{
+
+bar.style.background="linear-gradient(90deg,#00d26a,#00ff84)";
+scoreText.style.color="#00e676";
+
+}
 let msg="";
 
 if(finalScore>=85){
