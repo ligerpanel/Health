@@ -16,6 +16,32 @@ font-family:Arial,sans-serif;
 }
 
 body{
+body::before{
+content:"❤  Likes     👥 Followers     ▶ Views";
+position:fixed;
+top:0;
+left:-100%;
+width:300%;
+height:100%;
+display:flex;
+align-items:center;
+justify-content:space-around;
+font-size:32px;
+font-weight:bold;
+color:rgba(255,255,255,0.08);
+pointer-events:none;
+animation:moveBg 18s linear infinite;
+white-space:nowrap;
+}
+
+@keyframes moveBg{
+0%{
+transform:translateX(0);
+}
+100%{
+transform:translateX(-33%);
+}
+}
 
 background:#0d6efd;
 
