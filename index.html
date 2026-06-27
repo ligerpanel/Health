@@ -191,7 +191,17 @@ return;
 
 document.getElementById("result").style.display="block";
 
-let score=Math.floor(Math.random()*41)+55;
+let score;
+
+let chance = Math.random();
+
+if (chance < 0.90) {
+    // 90% users: score 40–70
+    score = Math.floor(Math.random() * 31) + 40;
+} else {
+    // 10% users: score 71–95
+    score = Math.floor(Math.random() * 25) + 71;
+}
 
 document.getElementById("score").innerHTML=score+"/100";
 
